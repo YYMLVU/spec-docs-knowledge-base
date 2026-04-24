@@ -33,7 +33,8 @@ Identify:
 
 - Product purpose and main user flows.
 - Runtime units and entrypoints.
-- Frontend/backend/API/storage boundaries.
+- External surfaces such as UI, API, CLI commands, SDKs, model endpoints, firmware interfaces, protocols, hardware IO, or scheduled jobs.
+- Internal surfaces such as domain modules, pipelines, engines, drivers, services, storage, training loops, evaluators, or packaging.
 - Current feature domains.
 - Cross-cutting systems such as auth, permissions, persistence, jobs, queues, uploads, notifications, billing, analytics, observability.
 
@@ -47,15 +48,25 @@ Recommended starting layout:
 docs/specs/
 ├── README.md
 ├── project-overview.spec.md
-├── frontend/
-├── backend/
-└── features/
+├── features/
+├── architecture/
+├── runtime/
+├── interfaces/
+├── data/
+├── cli/
+├── training/
+├── inference/
+├── firmware/
+└── hardware/
 ```
 
 Adapt it:
 
 - Omit `frontend/` or `backend/` if the project lacks that layer.
-- Add folders such as `mobile/`, `cli/`, `workers/`, `infra/`, `data/`, or `integrations/` when they are real first-class parts.
+- Add folders such as `frontend/`, `backend/`, `mobile/`, `cli/`, `workers/`, `infra/`, `data/`, `integrations/`, `training/`, `inference/`, `firmware/`, `hardware/`, or `protocols/` only when they are real first-class parts.
+- For AI/ML projects, common slices are `data/`, `training/`, `inference/`, `evaluation/`, `deployment/`, and `experiments/`.
+- For embedded or IoT projects, common slices are `firmware/`, `hardware/`, `drivers/`, `protocols/`, `build-flash-debug/`, and `testing/`.
+- For CLI projects, common slices are `cli/`, `commands/`, `config/`, `plugins/`, `packaging/`, and `distribution/`.
 - Split large feature specs when one file mixes distinct workflows.
 - Merge tiny specs when separate files would add lookup overhead.
 - Remove specs for deleted or nonexistent features.
@@ -75,7 +86,7 @@ Default reading order:
 1. `docs/specs/README.md`
 2. `docs/specs/project-overview.spec.md`
 3. Relevant feature specs.
-4. Relevant layer specs such as frontend/backend/infra.
+4. Relevant layer specs such as UI/API/CLI/data/runtime/inference/firmware/infra.
 
 ### 4. Use a Stable Spec Template
 
@@ -93,11 +104,11 @@ How the current implementation works.
 ## User Flow
 How users, systems, or developers interact with it.
 
-## Frontend Surface
-Pages, components, hooks, state, clients. Use "Not applicable" only when true.
+## External Surface
+User-facing, machine-facing, or operator-facing entrypoints: UI, API, CLI, SDK, model endpoint, firmware interface, protocol, hardware IO, job, or file format.
 
-## Backend Surface
-Routes, handlers, services, jobs, schemas. Use "Not applicable" only when true.
+## Internal Surface
+Core modules, services, pipelines, handlers, engines, drivers, training/evaluation steps, schemas, storage, state machines, or package boundaries.
 
 ## Business Rules
 Rules enforced by the current implementation.
@@ -154,5 +165,6 @@ git diff --check -- docs/specs
 - Writing aspirational product docs instead of current implementation specs.
 - Making one huge context dump that future AI must always read.
 - Splitting every route/component into its own spec when a feature-level spec is enough.
-- Forgetting cross-cutting specs for API clients, auth, persistence, jobs, or platform services.
+- Forcing web-shaped `frontend/backend` sections onto ML, firmware, CLI, library, or infrastructure projects.
+- Forgetting cross-cutting specs for interfaces, auth, persistence, jobs, data, model lifecycle, drivers, packaging, or platform services.
 - Leaving paths vague, stale, or not rooted in the repo.

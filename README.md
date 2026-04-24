@@ -11,6 +11,7 @@ The skill helps an agent inspect a repository, identify real feature and archite
 - Splits documentation by real project responsibility, not by a fixed file count.
 - Captures feature behavior, architecture surfaces, business rules, edge cases, tests, code references, and update rules.
 - Keeps specs living: add, split, merge, or delete files as the project changes.
+- Adapts beyond web apps: CLI tools, AI/ML systems, embedded firmware, IoT projects, libraries, infrastructure, and other repo shapes.
 
 ## When To Use
 
@@ -46,12 +47,14 @@ Typical output structure:
 docs/specs/
 ├── README.md
 ├── project-overview.spec.md
-├── frontend/
-├── backend/
-└── features/
+├── features/
+├── architecture/
+├── runtime/
+├── interfaces/
+└── <project-specific folders>
 ```
 
-The exact structure is dynamic. The skill should add or remove specs to match the real project, not preserve a fixed template.
+The exact structure is dynamic. A web app may use `frontend/` and `backend/`; an AI/ML project may use `data/`, `training/`, `inference/`, and `evaluation/`; an embedded project may use `firmware/`, `hardware/`, `drivers/`, and `protocols/`; a CLI may use `cli/`, `commands/`, `config/`, and `packaging/`. The skill should add or remove specs to match the real project, not preserve a fixed template.
 
 ## Repository Contents
 
@@ -68,4 +71,3 @@ The exact structure is dynamic. The skill should add or remove specs to match th
 ## License
 
 MIT
-
