@@ -1,4 +1,4 @@
-# Spec Docs Knowledge Base
+# Spec Docs
 
 [English](./README.en.md)
 
@@ -42,15 +42,15 @@
 #### 项目级安装（推荐）
 
 ```bash
-mkdir -p .claude/skills/spec-docs-knowledge-base
-cp -R ./* .claude/skills/spec-docs-knowledge-base/
+mkdir -p .claude/skills/spec-docs
+cp -R ./* .claude/skills/spec-docs/
 ```
 
 #### 用户级安装
 
 ```bash
-mkdir -p ~/.claude/skills/spec-docs-knowledge-base
-cp -R ./* ~/.claude/skills/spec-docs-knowledge-base/
+mkdir -p ~/.claude/skills/spec-docs
+cp -R ./* ~/.claude/skills/spec-docs/
 ```
 
 ### Codex / 兼容 skills 目录的 agent
@@ -58,8 +58,8 @@ cp -R ./* ~/.claude/skills/spec-docs-knowledge-base/
 如果你的 agent 使用类似 skills 目录机制，也可以安装到该 agent 的 skills 目录。例如：
 
 ```bash
-mkdir -p ~/.agents/skills/spec-docs-knowledge-base
-cp -R ./* ~/.agents/skills/spec-docs-knowledge-base/
+mkdir -p ~/.agents/skills/spec-docs
+cp -R ./* ~/.agents/skills/spec-docs/
 ```
 
 ### Linux / macOS / Windows 说明
@@ -68,8 +68,8 @@ cp -R ./* ~/.agents/skills/spec-docs-knowledge-base/
 - **Windows PowerShell**：
 
 ```powershell
-New-Item -ItemType Directory -Force "$HOME/.claude/skills/spec-docs-knowledge-base" | Out-Null
-Copy-Item -Recurse . "$HOME/.claude/skills/spec-docs-knowledge-base"
+New-Item -ItemType Directory -Force "$HOME/.claude/skills/spec-docs" | Out-Null
+Copy-Item -Recurse . "$HOME/.claude/skills/spec-docs"
 ```
 
 ### 适用的 agent
@@ -88,10 +88,10 @@ Copy-Item -Recurse . "$HOME/.claude/skills/spec-docs-knowledge-base"
 
 ```text
 请将当前目录中的 spec-docs 仓库安装为当前项目可用的 skill：
-1. 在当前项目下创建 `.claude/skills/spec-docs-knowledge-base/`
+1. 在当前项目下创建 `.claude/skills/spec-docs/`
 2. 将仓库中的 `SKILL.md` 以及安装所需的说明文件复制进去
-3. 保持目录名为 `spec-docs-knowledge-base`
-4. 安装完成后检查 `./.claude/skills/spec-docs-knowledge-base/SKILL.md` 是否存在
+3. 保持目录名为 `spec-docs`
+4. 安装完成后检查 `./.claude/skills/spec-docs/SKILL.md` 是否存在
 5. 如果当前环境不是 Claude Code，而是其他支持 skills 目录的 agent，请改装到对应的 skills 目录
 6. 不要修改 skill 内容，只做安装与校验
 ```
@@ -103,7 +103,7 @@ Copy-Item -Recurse . "$HOME/.claude/skills/spec-docs-knowledge-base"
 在项目工作目录中调用这个 skill，例如：
 
 ```text
-$spec-docs-knowledge-base 将当前项目完整 Spec 化
+$spec-docs 将当前项目完整 Spec 化
 ```
 
 典型输出结构：

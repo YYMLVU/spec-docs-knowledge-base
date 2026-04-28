@@ -1,4 +1,4 @@
-# Spec Docs Knowledge Base
+# Spec Docs
 
 [简体中文](./README.md)
 
@@ -37,15 +37,15 @@ This repository is a skill package. You can install it as either:
 #### Project-level install (recommended)
 
 ```bash
-mkdir -p .claude/skills/spec-docs-knowledge-base
-cp -R ./* .claude/skills/spec-docs-knowledge-base/
+mkdir -p .claude/skills/spec-docs
+cp -R ./* .claude/skills/spec-docs/
 ```
 
 #### User-level install
 
 ```bash
-mkdir -p ~/.claude/skills/spec-docs-knowledge-base
-cp -R ./* ~/.claude/skills/spec-docs-knowledge-base/
+mkdir -p ~/.claude/skills/spec-docs
+cp -R ./* ~/.claude/skills/spec-docs/
 ```
 
 ### Codex / other agents with skills directories
@@ -53,8 +53,8 @@ cp -R ./* ~/.claude/skills/spec-docs-knowledge-base/
 If your agent supports a skills-directory pattern, install it into that directory. For example:
 
 ```bash
-mkdir -p ~/.agents/skills/spec-docs-knowledge-base
-cp -R ./* ~/.agents/skills/spec-docs-knowledge-base/
+mkdir -p ~/.agents/skills/spec-docs
+cp -R ./* ~/.agents/skills/spec-docs/
 ```
 
 ### Linux / macOS / Windows
@@ -63,8 +63,8 @@ cp -R ./* ~/.agents/skills/spec-docs-knowledge-base/
 - **Windows PowerShell**:
 
 ```powershell
-New-Item -ItemType Directory -Force "$HOME/.claude/skills/spec-docs-knowledge-base" | Out-Null
-Copy-Item -Recurse . "$HOME/.claude/skills/spec-docs-knowledge-base"
+New-Item -ItemType Directory -Force "$HOME/.claude/skills/spec-docs" | Out-Null
+Copy-Item -Recurse . "$HOME/.claude/skills/spec-docs"
 ```
 
 ### Supported agent types
@@ -83,10 +83,10 @@ If you do not want to install it manually, copy this instruction into your AI to
 
 ```text
 Install the spec-docs repository in the current directory as a reusable skill for this project.
-1. Create `.claude/skills/spec-docs-knowledge-base/` in the current project.
+1. Create `.claude/skills/spec-docs/` in the current project.
 2. Copy `SKILL.md` and the required installation docs from this repository into that directory.
-3. Keep the directory name exactly `spec-docs-knowledge-base`.
-4. Verify that `./.claude/skills/spec-docs-knowledge-base/SKILL.md` exists after installation.
+3. Keep the directory name exactly `spec-docs`.
+4. Verify that `./.claude/skills/spec-docs/SKILL.md` exists after installation.
 5. If the current environment is not Claude Code but another agent with a skills directory, install it into the equivalent skills location.
 6. Do not modify the skill content; only install and verify it.
 ```
@@ -98,7 +98,7 @@ For a fuller AI-oriented install handoff, see [INSTALL-FOR-AI.md](./INSTALL-FOR-
 Invoke the skill in a project workspace:
 
 ```text
-$spec-docs-knowledge-base convert this project into an AI-readable spec library
+$spec-docs convert this project into an AI-readable spec library
 ```
 
 Typical output structure:

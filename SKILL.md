@@ -1,9 +1,9 @@
 ---
-name: spec-docs-knowledge-base
+name: spec-docs
 description: Use when a project needs to be converted into an AI-readable spec documentation library before development, refactoring, onboarding, or multi-agent work; especially when the user asks to spec-ify, document architecture/features, build a knowledge base, or prepare AI context for a repo.
 ---
 
-# Spec Docs Knowledge Base
+# Spec Docs
 
 ## Overview
 
